@@ -13,7 +13,7 @@ export default function Doctors() {
   const fetchDoctors = async () => {
 
     const res = await axios.get(
-      "https://dhanashri1201.pythonanywhere.com/api/login/"
+      "http://dhanashri1201.pythonanywhere.com/api/doctors/"
     );
 
     setDoctors(res.data);
