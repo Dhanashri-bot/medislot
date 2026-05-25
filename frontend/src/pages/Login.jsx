@@ -13,7 +13,7 @@ export default function Login() {
   const loginUser = async () => {
 
     const res = await axios.post(
-      "http://dhanashri1201.pythonanywhere.com/api/login/",
+      "https://dhanashri1201.pythonanywhere.com/api/login/",
       data
     );
 

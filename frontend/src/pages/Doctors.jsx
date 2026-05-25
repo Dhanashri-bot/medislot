@@ -7,13 +7,14 @@ export default function Doctors() {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/immutability
     fetchDoctors();
   }, []);
 
   const fetchDoctors = async () => {
 
     const res = await axios.get(
-      "http://dhanashri1201.pythonanywhere.com/api/doctors/"
+      "https://dhanashri1201.pythonanywhere.com/api/doctors/"
     );
 
     setDoctors(res.data);
