@@ -1,23 +1,34 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 
-class User(AbstractUser):
-    ROLE_CHOICES = (
-        ('admin', 'Admin'),
-        ('doctor', 'Doctor'),
-        ('patient', 'Patient'),
-    )
-
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
 
 class Doctor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    name = models.CharField(max_length=100)
+
     specialization = models.CharField(max_length=100)
+
+    experience = models.IntegerField()
+
     fee = models.IntegerField()
 
+    def __str__(self):
+
+        return self.name
+
+
 class Appointment(models.Model):
-    patient = models.ForeignKey(User, on_delete=models.CASCADE)
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    date = models.DateField()
-    time = models.TimeField()
-    status = models.CharField(max_length=20, default='Booked')
+
+    patient_name = models.CharField(max_length=100)
+
+    doctor = models.ForeignKey(
+        Doctor,
+        on_delete=models.CASCADE
+    )
+
+    appointment_date = models.DateField()
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+
+        return self.patient_name
