@@ -1,28 +1,12 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
-from .models import Doctor, Appointment
-
-User = get_user_model()
-
-
-# =========================
-# REGISTER SERIALIZER
-# =========================
 
 class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
-
         model = User
-
-        fields = [
-            'id',
-            'username',
-            'email',
-            'password'
-        ]
-
+        fields = ['username', 'email', 'password']
         extra_kwargs = {
             'password': {'write_only': True}
         }
@@ -36,29 +20,3 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
 
         return user
-
-
-# =========================
-# DOCTOR SERIALIZER
-# =========================
-
-class DoctorSerializer(serializers.ModelSerializer):
-
-    class Meta:
-
-        model = Doctor
-
-        fields = "__all__"
-
-
-# =========================
-# APPOINTMENT SERIALIZER
-# =========================
-
-class AppointmentSerializer(serializers.ModelSerializer):
-
-    class Meta:
-
-        model = Appointment
-
-        fields = "__all__"
