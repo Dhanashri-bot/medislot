@@ -212,8 +212,16 @@ catch (error) {
 
   console.log(error);
 
-  console.log(error.response.data);
+  if (error.response) {
 
-  alert(JSON.stringify(error.response.data));
+    console.log(error.response.data);
+
+    alert(JSON.stringify(error.response.data));
+
+  } else {
+
+    alert("Server Error");
+
+  }
 
 }
