@@ -1,9 +1,3 @@
-const handleSubmit = async (e) => {
+alert("Registration successful");
 
-  e.preventDefault();
-
-  alert("Registration successful");
-
-  navigate("/");
-
-};
+navigate("/");
