@@ -19,7 +19,7 @@ function Appointments() {
     try {
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/appointments/"
+        "https://dhanashri1201.pythonanywhere.com/api/appointments/"
       );
 
       setAppointments(response.data);

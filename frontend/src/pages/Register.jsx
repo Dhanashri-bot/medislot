@@ -46,7 +46,7 @@ function Register() {
     try {
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/register/",
+        "https://dhanashri1201.pythonanywhere.com/api/register/",
         {
           username: formData.username,
           email: formData.email,

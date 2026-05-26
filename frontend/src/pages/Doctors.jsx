@@ -23,7 +23,7 @@ function Doctors() {
     try {
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/doctors/"
+        "https://dhanashri1201.pythonanywhere.com/api/doctors/"
       );
 
       console.log("Doctors API:", response.data);
@@ -85,7 +85,7 @@ function Doctors() {
     try {
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/doctors/book/",
+        "https://dhanashri1201.pythonanywhere.com/api/doctors/book/",
         {
           doctor: doctorId,
           patient_name: patientName,
