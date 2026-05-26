@@ -1,13 +1,13 @@
-const handleSubmit = async (e) => {
+const handleSubmit = (e) => {
 
   e.preventDefault();
+
+  alert("Login successful");
 
   localStorage.setItem(
     "username",
     formData.username
   );
-
-  alert("Login successful");
 
   navigate("/dashboard");
 
