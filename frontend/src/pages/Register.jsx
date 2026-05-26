@@ -1,3 +1,9 @@
-alert("Registration successful");
+const handleSubmit = (e) => {
 
-navigate("/");
+  e.preventDefault();
+
+  alert("Registration successful");
+
+  navigate("/");
+
+};
